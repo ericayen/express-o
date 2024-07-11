@@ -15,7 +15,7 @@ export default function AboutPage() {
           <section>
             <div>
               <h2 className="text-lg font-medium text-brown sm:text-2xl lg:text-3xl">
-                Why "Express-o"?
+                Why &quot;Express-o&quot;?
               </h2>
               <p className="pt-2 pb-8 text-sm sm:pb-12 sm:text-lg lg:text-xl sm:pt-4 lg:pt-8">
                 The title is a play on the word <i>espresso</i>, which is commonly
@@ -48,7 +48,7 @@ export default function AboutPage() {
             </div>
           </section>
           <div className="flex justify-center gap-x-6">
-            <a href="/coffee" className="button">
+            <a href="about/coffee" className="button">
               Get started
             </a>
             <a href="/quiz" className="button">
