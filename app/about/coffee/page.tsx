@@ -30,7 +30,7 @@ export default function AboutCoffee() {
             </div>
             <div>
               <h2 className="text-lg font-medium text-brown sm:text-2xl lg:text-3xl">
-                What is "light" or "dark" roast coffee?
+                What is &quot;light&quot; or &quot;dark&quot; roast coffee?
               </h2>
               <p className="pt-2 pb-8 text-sm sm:pb-12 sm:text-lg lg:text-xl sm:pt-4 lg:pt-8">
                 Roasting transforms green coffee into the aromatic brown beans that
@@ -42,7 +42,7 @@ export default function AboutCoffee() {
             </div>
             <div>
               <h2 className="text-lg font-medium text-brown sm:text-2xl lg:text-3xl">
-                What's the difference?
+                What&apos;s the difference?
               </h2>
               <p className="pt-2 pb-8 text-sm sm:pb-12 sm:text-lg lg:text-xl sm:pt-4 lg:pt-8">
                 Light roasts tend to have more delicate yet complex flavour profiles

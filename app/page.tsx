@@ -43,7 +43,7 @@ export default function Home() {
         </p>
         <p className="py-4 text-brown">
           <span className="text-brown-dark">/eˈspresō/</span> : the correct
-          pronunciation of 'espresso'
+          pronunciation of &apos;espresso&apos;
         </p>
       </div>
     )}
@@ -51,7 +51,7 @@ export default function Home() {
     {showButton && (
       <div className="py-2 text-center font-ms animate-fade">
         <a href="/about" className="mt-0 button">
-          Let's get roasting!
+          Let&apos;s get roasting!
         </a>
       </div>
     )}
