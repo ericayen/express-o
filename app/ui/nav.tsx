@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import NavLinks from '@/app/ui/nav-links';
 
-import React, { useState, useEffect } from 'react';
-
 export default function MainNav() {
 	return (
 		<div
