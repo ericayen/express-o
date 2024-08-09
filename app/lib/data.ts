@@ -39,8 +39,21 @@ export async function getArabicaList() {
 export async function getQuizList() {
 	try {
 		const data = await sql<Question>`SELECT * FROM questions`;
+		const quiz = data.rows;
+		return quiz;
 	} catch (error) {
 		console.error('Database Error:', error);
 		throw new Error('Failed to fetch question data.');
+	}
+}
+
+export async function getResponseList() {
+	try {
+		const data = await sql<Response>`SELECT * FROM responses`;
+		const response = data.rows;
+		return response;
+	} catch (error) {
+		console.error('Database Error:', error);
+		throw new Error('Failed to fetch response data.');
 	}
 }

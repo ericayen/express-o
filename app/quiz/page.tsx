@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Card from '../ui/quiz/card';
 
 export const metadata: Metadata = {
 	title: 'Quiz',
@@ -17,6 +18,7 @@ export default async function Page() {
 				Find out what coffee best matches your preferences
 			</h2>
 			<button className='button'>Let&apos;s start!</button>
+			<Card />
 		</main>
 	);
 }
