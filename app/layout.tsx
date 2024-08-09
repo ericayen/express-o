@@ -1,28 +1,26 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import MainNav from "./ui/nav";
-import Footer from "./ui/footer";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import MainNav from './ui/nav';
+import Footer from './ui/footer';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Express-o",
-  description: "Coffee app for aspiring coffee lovers, to help you learn about the wonderful world of coffee",
+	title: 'Express-o',
+	description:
+		'Coffee app for aspiring coffee lovers, to help you learn about the wonderful world of coffee',
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-          <MainNav />
-        <div className="flex-grow md:overflow-y-auto">{children}</div>
-        <Footer />
-      </body>
-    </html>
-  );
+	return (
+		<html lang='en'>
+			<body>
+				<MainNav />
+				{children}
+				<Footer />
+			</body>
+		</html>
+	);
 }

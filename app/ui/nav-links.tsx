@@ -11,6 +11,8 @@ const links = [
 	{ name: 'Home', href: '/' },
 	{ name: 'About', href: '/about' },
 	{ name: 'Coffee', href: '/about/coffee' },
+	{ name: 'Beans', href: '/beans' },
+	{ name: 'Quiz', href: '/quiz' },
 ];
 
 export default function NavLinks() {
