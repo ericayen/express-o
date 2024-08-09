@@ -26,12 +26,12 @@ export default async function Card() {
 											<input
 												type='radio'
 												className='mr-2 radio radio-xs checked:bg-red'
-												id={response.response_id}
+												id={`${response.response_id}`}
 												name={`question_${question.question_id}`}
 												value={response.option}
 											/>
 											<label
-												htmlFor={response.response_id}
+												htmlFor={`${response.response_id}`}
 												className='cursor-pointer hover:text-red'>
 												{response.option}
 											</label>
