@@ -36,6 +36,18 @@ export async function getArabicaList() {
 	}
 }
 
+export async function getCoffeeListByType(coffeeType: string) {
+	try {
+		const data = await sql<Coffee>`
+		SELECT * FROM coffee WHERE coffee_type = ${coffeeType}`;
+		const coffee = data.rows;
+		return coffee;
+	} catch (error) {
+		console.error('Database Error:', error);
+		throw new Error(`Failed to fetch data for ${coffeeType} coffee.`);
+	}
+}
+
 export async function getQuizList() {
 	try {
 		const data = await sql<Question>`SELECT * FROM questions`;
