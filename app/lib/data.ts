@@ -15,7 +15,7 @@ export async function getCoffeeList() {
 export async function getCoffeeTypes() {
 	try {
 		const data =
-			await sql<Coffee>`SELECT DISTINCT coffee_id, coffee_type, history FROM coffee ORDER BY coffee_id ASC`;
+			await sql<Coffee>`SELECT DISTINCT ON (coffee_type) * FROM coffee ORDER BY coffee_type`;
 		const coffee = data.rows;
 		return coffee;
 	} catch (error) {

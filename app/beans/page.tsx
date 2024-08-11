@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { getCoffeeList } from '@/app/lib/data';
-import CardWrapper from '@/app/ui/beans/card';
+import CardWrapper from '@/app/ui/beans/wrapper';
 
 export const metadata: Metadata = {
 	title: 'About Beans',
