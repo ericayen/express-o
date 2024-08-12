@@ -48,7 +48,7 @@ export default function AboutPage() {
             </div>
           </section>
           <div className="flex justify-center gap-x-6">
-            <a href="about/coffee" className="button">
+            <a href="/coffee" className="button">
               Get started
             </a>
             <a href="/quiz" className="button">
