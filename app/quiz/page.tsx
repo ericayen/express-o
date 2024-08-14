@@ -1,12 +1,11 @@
-// import { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
-import Card from '../ui/quiz/card';
 
-// export const metadata: Metadata = {
-// 	title: 'Quiz',
-// 	description:
-// 		'Take a short quiz to discover coffee that matches your preferences',
-// };
+export const metadata: Metadata = {
+	title: 'Quiz',
+	description:
+		'Take a short quiz to discover coffee that matches your preferences',
+};
 
 export default async function Page() {
 	return (
