@@ -1,5 +1,6 @@
 import Card from '@/app/ui/quiz/card';
 import { getQuizList, getResponseList } from '@/app/lib/data';
+import Scroll from '@/app/ui/quiz/scroll';
 
 export default async function Page() {
 	const questions = await getQuizList();
@@ -11,7 +12,7 @@ export default async function Page() {
 				<span className='text-brown'>Take a </span>
 				<span className='font-semibold'>Quiz</span>
 			</h1>
-
+			<Scroll />
 			<form action='/quiz/result' method='POST'>
 				<Card questions={questions} responses={responses} />
 				<button type='submit' className='mt-8 button'>
