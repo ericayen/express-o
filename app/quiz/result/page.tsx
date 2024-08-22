@@ -3,7 +3,7 @@
 import QuizResult from '@/app/ui/quiz/result';
 import { useSearchParams } from 'next/navigation';
 
-export default async function Page() {
+export default function Page() {
 	const searchParams = useSearchParams();
 	const params = Object.fromEntries(searchParams.entries());
 	const options = Object.values(params);
