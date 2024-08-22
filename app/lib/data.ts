@@ -69,3 +69,44 @@ export async function getResponseList() {
 		throw new Error('Failed to fetch response data.');
 	}
 }
+
+export async function getQuizResult(options: string[]) {
+	try {
+		const data =
+			await sql<Response>`SELECT coffee_ids FROM responses WHERE option IN(${options[0]}, ${options[1]}, ${options[2]}, ${options[3]})`;
+		const response = data.rows;
+
+		const coffeeIds = response
+			.map((item) => item.coffee_ids.split(','))
+			.flat()
+			.reduce((count: { [key: string]: number }, id: string) => {
+				count[id] = (count[id] || 0) + 1;
+				return count;
+			}, {});
+
+		let maxCount = 0;
+		const maxIds: string[] = [];
+
+		for (const id in coffeeIds) {
+			if (coffeeIds[id] > maxCount) {
+				maxCount = coffeeIds[id];
+				maxIds.length = 0;
+				maxIds.push(id);
+			} else if (coffeeIds[id] === maxCount) {
+				maxIds.push(id);
+			}
+		}
+
+		const coffeeInfo = await Promise.all(
+			maxIds.map(
+				(id) =>
+					sql<Coffee>`SELECT * FROM coffee WHERE coffee_id = ${Number(id)}`
+			)
+		);
+		
+		return coffeeInfo;
+	} catch (error) {
+		console.error('Database Error:', error);
+		throw new Error('Failed to fetch coffee_id data.');
+	}
+}
