@@ -23,7 +23,7 @@ export async function getCoffeeTypes() {
 		throw new Error('Failed to fetch coffee type data.');
 	}
 }
-
+/*
 export async function getArabicaList() {
 	try {
 		const data =
@@ -35,7 +35,7 @@ export async function getArabicaList() {
 		throw new Error('Failed to fetch Arabica data.');
 	}
 }
-
+*/
 export async function getCoffeeListByType(coffeeType: string) {
 	try {
 		const data = await sql<Coffee>`
@@ -72,11 +72,10 @@ export async function getResponseList() {
 
 export async function getQuizResult(options: string[]) {
 	try {
-		const data =
+		const { rows } =
 			await sql<Response>`SELECT coffee_ids FROM responses WHERE option IN(${options[0]}, ${options[1]}, ${options[2]}, ${options[3]})`;
-		const response = data.rows;
 
-		const coffeeIds = response
+		const coffeeIds = rows
 			.map((item) => item.coffee_ids.split(','))
 			.flat()
 			.reduce((count: { [key: string]: number }, id: string) => {
@@ -99,12 +98,12 @@ export async function getQuizResult(options: string[]) {
 
 		const coffeeInfo = await Promise.all(
 			maxIds.map(
-				(id) =>
-					sql<Coffee>`SELECT * FROM coffee WHERE coffee_id = ${Number(id)}`
+				(id) => sql<Coffee>`SELECT * FROM coffee WHERE coffee_id = ${id}`
 			)
 		);
-		
-		return coffeeInfo;
+
+		let data = coffeeInfo.map((result) => result.rows);
+		return data;
 	} catch (error) {
 		console.error('Database Error:', error);
 		throw new Error('Failed to fetch coffee_id data.');
