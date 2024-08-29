@@ -1,5 +1,6 @@
 import { getQuizResult } from '@/app/lib/data';
 import { Coffee } from '@/app/lib/definitions';
+import ResultCard from '@/app/ui/quiz/result-card';
 
 type Props = {
 	searchParams: {
@@ -23,33 +24,38 @@ export default async function Page({ searchParams }: Props) {
 				<span className='text-brown'>Your </span>
 				<span className='font-semibold'>Results</span>
 			</h1>
-			{
-				results.length === 0 ? (
-					<div>No results found</div>
-				) : (
-					<div>Here are your results</div>
-				)
-				/* 
-			 : (
-				<div>
-					{results.flat().map((result, index) => (
-						<div key={result.coffee_id}>
-							<h2>Result #{index + 1}</h2>
-							<p>Type: {result.coffee_type}</p>
-							<p>Region: {result.region}</p>
-							<p>History: {result.history}</p>
-							<p>Countries: {result.countries}</p>
-							<p>Acidity: {result.acidity}</p>
-							<p>Flavour: {result.flavour}</p>
-							<p>Roast Profile: {result.roast_profile}</p>
+
+			{results?.length > 0 && (
+				<section>
+					<h2 className='pb-8 text-lg font-medium lg:text-2xl'>Top Match:</h2>
+					<div className='p-4 mb-2 rounded-2xl bg-beige-light'>
+						<h2 className='pb-4 text-lg font-medium lg:text-2xl'>
+							{results[0][0].coffee_type} ({results[0][0].region})
+						</h2>
+						<ResultCard results={results[0][0]} />
+					</div>
+
+					{results.length > 1 && (
+						<div>
+							<h2 className='pt-8 pb-8 text-lg font-medium lg:text-2xl'>
+								Other Matches:
+							</h2>
+
+							{results.slice(1).map((result, index) => (
+								<div className='mb-2 collapse collapse-plus bg-beige-light'>
+									<input type='checkbox' name='my-accordion-3' />
+									<h2 className='pl-12 text-lg font-medium lg:text-2xl collapse-title'>
+										{result[0].coffee_type} ({result[0].region})
+									</h2>
+									<div className='collapse-content'>
+										<ResultCard key={index} results={result[0]} />
+									</div>
+								</div>
+							))}
 						</div>
-					))}
-				</div>
-			)*/
-			}
+					)}
+				</section>
+			)}
 		</main>
 	);
 }
-
-// Make this component a server component by not including 'use client'
-// export default Page;
