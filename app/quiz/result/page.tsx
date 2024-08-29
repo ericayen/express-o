@@ -42,13 +42,15 @@ export default async function Page({ searchParams }: Props) {
 							</h2>
 
 							{results.slice(1).map((result, index) => (
-								<div className='mb-2 collapse collapse-plus bg-beige-light'>
+								<div
+									className='mb-2 collapse collapse-plus bg-beige-light'
+									key={index}>
 									<input type='checkbox' name='my-accordion-3' />
 									<h2 className='pl-12 text-lg font-medium lg:text-2xl collapse-title'>
 										{result[0].coffee_type} ({result[0].region})
 									</h2>
 									<div className='collapse-content'>
-										<ResultCard key={index} results={result[0]} />
+										<ResultCard results={result[0]} />
 									</div>
 								</div>
 							))}
