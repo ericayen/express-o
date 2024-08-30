@@ -74,9 +74,7 @@ export default function Form({ questions, responses }: Props) {
 									.map((response) => (
 										<li
 											key={response.response_id}
-											className={`flex items-center py-1 text-sm sm:text-lg lg:text-xl ${
-												hasError ? 'bg-red-100' : ''
-											}`}>
+											className='flex items-center py-1 text-sm sm:text-lg lg:text-xl'>
 											<input
 												type='radio'
 												className='mr-2 radio radio-xs checked:bg-red'
