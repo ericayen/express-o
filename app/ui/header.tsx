@@ -14,7 +14,7 @@ export default function Header() {
 		<header className='drawer'>
 			<input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
 			<div className='drawer-content flex flex-col'>
-				<nav className='navbar bg-white w-full'>
+				<nav className='navbar bg-white w-full lg:justify-end'>
 					<div className='flex-none lg:hidden'>
 						<label
 							htmlFor='my-drawer-3'
@@ -36,7 +36,7 @@ export default function Header() {
 					<div
 						className={clsx(
 							'mx-2 flex-1 px-2',
-							pathname === '/' ? 'sm:hidden lg:block' : ''
+							pathname === '/' ? 'hidden' : ''
 						)}>
 						<Link href='/'>
 							<Image
@@ -65,7 +65,7 @@ export default function Header() {
 					htmlFor='my-drawer-3'
 					aria-label='close sidebar'
 					className='drawer-overlay'></label>
-				<ul className='bg-white min-h-full w-40 p-4'>
+				<ul className='bg-white min-h-full w-48 p-4'>
 					<NavLinks />
 				</ul>
 			</nav>

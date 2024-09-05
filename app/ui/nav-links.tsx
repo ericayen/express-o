@@ -27,7 +27,10 @@ export default function NavLinks() {
 				return (
 					<li
 						className={clsx(
-							'leading-loose rounded-box font-medium text-xs md:text-sm lg:text-base hover:bg-beige-light inline-flex lg:inline-block w-full lg:w-fit',
+							link.href === '/' ? 'lg:hidden' : '',
+							pathname === '/' && link.href === '/'
+								? 'hidden lg:hidden'
+								: 'leading-loose rounded-box font-medium text-xs md:text-sm lg:text-base hover:bg-beige-light inline-flex lg:inline-block w-full lg:w-fit',
 							isActive
 								? 'underline underline-offset-8 text-brown-dark'
 								: 'text-brown'
