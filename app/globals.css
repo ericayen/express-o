@@ -11,13 +11,16 @@
 		@apply p-12 text-2xl lg:pb-24 lg:pt-20 sm:text-4xl lg:text-5xl;
 	}
 	.button {
-		@apply px-3 py-2 mt-4 text-sm font-medium text-white border border-solid rounded-full w-fit bg-brown border-brown sm:px-4 lg:px-5 lg:text-base hover:bg-white hover:text-brown hover:border-solid hover:border hover:border-brown active:scale-95;
+		@apply px-3 py-2 mt-4 text-sm font-medium text-white border border-solid rounded-box w-fit bg-brown border-brown sm:px-4 lg:px-5 lg:text-base hover:bg-white hover:text-brown hover:border-solid hover:border hover:border-brown active:scale-95;
+	}
+	input {
+		@apply block w-full border-2 border-beige-light py-[9px] pl-10 text-sm placeholder:text-gray-500 focus:border-beige focus:outline-beige rounded-box;
 	}
 }
 
 html {
-    -ms-overflow-style: none; 
-    scrollbar-width: none;  
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 body {

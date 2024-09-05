@@ -28,3 +28,10 @@ export type Response = {
 	option: string;
 	coffee_ids: string;
 };
+
+export type User = {
+	id: string;
+	name: string;
+	email: string;
+	password: string;
+  };
