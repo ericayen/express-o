@@ -36,7 +36,7 @@ export default function Home() {
 
     {showComponent && (
       <div className="pt-4 text-xs text-center text-brown-dark font-ms sm:text-sm lg:text-xl animate-fade">
-        <Image src={logo} alt="coffee cup logo" className="w-1/4 py-4 mx-auto lg:w-1/5"/>
+        <Image src={logo} alt="coffee cup logo" className="w-1/4 py-4 mx-auto"/>
         <p className="text-brown">
           <span className="text-brown-dark">/ikˈspresō/</span> : a coffee app
           to help you learn about the wonderful world of coffee

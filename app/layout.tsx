@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import MainNav from './ui/nav';
+import Header from './ui/header';
 import Footer from './ui/footer';
 import './globals.css';
 
@@ -16,8 +16,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body>
-				<MainNav />
+			<body className='font-ms'>
+				<Header /> 
 				{children}
 				<Footer />
 			</body>

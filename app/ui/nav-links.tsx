@@ -19,32 +19,35 @@ export default function NavLinks() {
 	const pathname = usePathname();
 	return (
 		<>
-			{links.map((link) => {
+			{links.map((link, index) => {
 				const isActive =
 					link.href === '/'
 						? pathname === link.href
 						: pathname.includes(link.href);
 				return (
-					<Link
-						key={link.name}
-						href={link.href}
+					<li
 						className={clsx(
-							'leading-loose rounded-full p-2 sm:p-4 font-medium text-xs md:text-sm lg:text-base hover:bg-beige-light',
+							'leading-loose rounded-box font-medium text-xs md:text-sm lg:text-base hover:bg-beige-light inline-flex lg:inline-block w-full lg:w-fit',
 							isActive
 								? 'underline underline-offset-8 text-brown-dark'
 								: 'text-brown'
-						)}>
-						<Image
-							src={logo}
-							alt='coffee cup logo'
-							className={
-								isActive
-									? 'inline w-4 animate-bounce mx-0.5 sm:w-6 lg:w-8'
-									: 'hidden'
-							}
-						/>
-						{link.name}
-					</Link>
+						)}
+						key={index}>
+						<Link
+							href={link.href}
+							className='leading-loose w-full p-4 hover:bg-beige-light rounded-box'>
+							<Image
+								src={logo}
+								alt='coffee cup logo'
+								className={
+									isActive
+										? 'inline w-4 animate-bounce mx-0.5 sm:w-6 lg:w-8'
+										: 'hidden'
+								}
+							/>
+							{link.name}
+						</Link>
+					</li>
 				);
 			})}
 		</>
