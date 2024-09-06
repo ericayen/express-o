@@ -13,6 +13,7 @@ const links = [
 	{ name: 'Coffee', href: '/coffee' },
 	{ name: 'Beans', href: '/beans' },
 	{ name: 'Quiz', href: '/quiz' },
+	{ name: 'Sign In', href: '/login' },
 ];
 
 export default function NavLinks() {
@@ -28,12 +29,13 @@ export default function NavLinks() {
 					<li
 						className={clsx(
 							link.href === '/' ? 'lg:hidden' : '',
-							pathname === '/' && link.href === '/'
-								? 'hidden lg:hidden'
-								: 'leading-loose rounded-box font-medium text-xs md:text-sm lg:text-base hover:bg-beige-light inline-flex lg:inline-block w-full lg:w-fit',
+							'leading-loose rounded-box font-medium text-xs md:text-sm lg:text-base hover:bg-beige-light inline-flex lg:inline-block w-full lg:w-fit',
 							isActive
 								? 'underline underline-offset-8 text-brown-dark'
-								: 'text-brown'
+								: 'text-brown',
+							link.href === '/login'
+								? 'absolute inset-x-0 bottom-0 px-4 rounded-none lg:rounded-box lg:static lg:px-0 text-red'
+								: ''
 						)}
 						key={index}>
 						<Link

@@ -33,11 +33,7 @@ export default function Header() {
 							</svg>
 						</label>
 					</div>
-					<div
-						className={clsx(
-							'mx-2 flex-1 px-2',
-							pathname === '/' ? 'hidden' : ''
-						)}>
+					<div className='mx-2 flex-1 px-2'>
 						<Link href='/'>
 							<Image
 								src={logo}
@@ -65,7 +61,7 @@ export default function Header() {
 					htmlFor='my-drawer-3'
 					aria-label='close sidebar'
 					className='drawer-overlay'></label>
-				<ul className='bg-white min-h-full w-48 p-4'>
+				<ul className='bg-white min-h-full w-48 p-4 relative'>
 					<NavLinks />
 				</ul>
 			</nav>
