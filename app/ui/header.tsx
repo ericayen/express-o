@@ -1,15 +1,12 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import NavLinks from './nav-links';
-import clsx from 'clsx';
 
 const logo = require('@/public/logo.png');
 
 export default function Header() {
-	const pathname = usePathname();
 	return (
 		<header className='drawer'>
 			<input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
@@ -62,6 +59,12 @@ export default function Header() {
 					aria-label='close sidebar'
 					className='drawer-overlay'></label>
 				<ul className='bg-white min-h-full w-48 p-4 relative'>
+					<label
+						aria-label='close sidebar'
+						htmlFor='my-drawer-3'
+						className='text-right cursor-pointer w-full inline-block text-brown font-medium text-2xl pr-4'>
+						x
+					</label>
 					<NavLinks />
 				</ul>
 			</nav>
