@@ -1,6 +1,7 @@
 import { getQuizResult } from '@/app/lib/data';
 import { Coffee } from '@/app/lib/definitions';
 import ResultCard from '@/app/ui/quiz/result-card';
+import Link from 'next/link';
 
 type Props = {
 	searchParams: {
@@ -28,7 +29,7 @@ export default async function Page({ searchParams }: Props) {
 			{results?.length > 0 && (
 				<section>
 					<h2 className='pb-8 text-lg font-medium lg:text-2xl'>Top Match:</h2>
-					<div className='p-4 mb-2 rounded-2xl bg-beige-light'>
+					<div className='p-4 rounded-2xl bg-beige-light'>
 						<h2 className='pb-4 text-lg font-medium lg:text-2xl'>
 							{results[0][0].coffee_type} ({results[0][0].region})
 						</h2>
@@ -58,6 +59,11 @@ export default async function Page({ searchParams }: Props) {
 					)}
 				</section>
 			)}
+			<section className='pt-8'>
+				<Link href='/quiz' className='button'>
+					Retake Quiz
+				</Link>
+			</section>
 		</main>
 	);
 }

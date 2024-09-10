@@ -8,7 +8,7 @@ const logo = require('@/public/logo.png');
 
 export default function Header() {
 	return (
-		<header className='drawer'>
+		<header className='drawer sticky top-0'>
 			<input id='my-drawer-3' type='checkbox' className='drawer-toggle' />
 			<div className='drawer-content flex flex-col'>
 				<nav className='navbar bg-white w-full lg:justify-end'>
